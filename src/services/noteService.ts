@@ -1,5 +1,5 @@
 export function fetchNotes(){
-
+    
 }
 
 export function createNote(){
