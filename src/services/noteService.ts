@@ -1,9 +1,10 @@
 import axios from 'axios';
-import {type Note, type CreateNoteDto} from '../types/note'
+import { useMutation } from '@tanstack/react-query';
+import {type Note, type CreateNote} from '../types/note'
 
 const BASE_URL = 'https://notehub-public.goit.study/api/notes';
 
-export function fetchNotes = async(search = ''): Promise<Note[]> => {
+export const fetchNotes = async(search: string):Promise<Note[]> => {
     const res = await axios.get(BASE_URL, {
     params: { search },
     headers: { Authorization: `Bearer ${import.meta.env.TOKEN_NOTEHUB}` },
