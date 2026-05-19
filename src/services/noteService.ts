@@ -21,7 +21,7 @@ interface FetchNotesParams {
   page: number;
   search: string;
 }
-
+//https://notehub-public.goit.study/api/notes?tag=Todo&page=1&perPage=10&sortBy=created
 export const fetchNotes = async ({
   page,
   search,
