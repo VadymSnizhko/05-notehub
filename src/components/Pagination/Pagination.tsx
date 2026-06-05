@@ -23,6 +23,7 @@ function Pagination({
   currentPage,
   onPageChange,
 }: PaginationProps) {
+  console.log(ReactPaginate);
   return (
     <ReactPaginate
       pageCount={totalPages}
