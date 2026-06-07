@@ -44,6 +44,8 @@ function App() {
         previousData,
     });
 
+ // const [search,updateSearch] = useState<string>("")
+
   const updateSearch =
     useDebouncedCallback(
       (value: string) => {
@@ -51,8 +53,7 @@ function App() {
 
         setCurrentPage(1);
       },
-
-      500
+      50
     );
 
   if (isLoading) {
