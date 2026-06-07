@@ -16,6 +16,8 @@ import Modal from '../Modal/Modal';
 
 import NoteForm from '../NoteForm/NoteForm';
 
+import css from './App.module.css'
+
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -63,22 +65,11 @@ function App() {
 
   return (
     <div>
+      <div className={css.toolbar}>
       <SearchBox
         value={search}
         onChange={updateSearch}
       />
-
-      <button
-        onClick={() =>
-          setIsModalOpen(true)
-        }
-      >
-        Create note +
-      </button>
-
-      {data && (
-        <NoteList notes={data.notes} />
-      )}
 
       {data &&
         data.totalPages > 1 && (
@@ -89,7 +80,24 @@ function App() {
               setCurrentPage
             }
           />
-        )}
+        )}      
+
+      <button
+        onClick={() =>
+          setIsModalOpen(true)
+        }
+        className={css.button}
+      >
+        Create note +
+      </button>        
+      </div>
+
+
+      {data && (
+        <NoteList notes={data.notes} />
+      )}
+
+
 
       {isModalOpen && (
         <Modal

@@ -1,4 +1,5 @@
 import ReactPaginate from "react-paginate";
+import css from './Pagination.module.css'
 
 interface PaginationProps {
   totalPages: number;
@@ -22,6 +23,8 @@ function Pagination({
       forcePage={currentPage - 1}
       previousLabel="<"
       nextLabel=">"
+      containerClassName={css.pagination}
+      activeClassName={css.active}
     />
   );
 }
